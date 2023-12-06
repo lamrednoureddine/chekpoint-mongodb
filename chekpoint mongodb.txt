@@ -1,0 +1,13 @@
+use contact
+db.createCollection('contactlist')
+db.contactlist.insert({'last-name':'ben-lahmer','first-name':'fares','email':'fares@gmail.com', 'age':'26'})
+db.contactlist.insert({'last-name':'Kefi','first-name':'Seif','email':'kefi@gmail.com', 'age':'15'})
+db.contactlist.insert({'last-name':'benyahi','first-name':'rym','email':'rym@gmail.com', age:'4'})
+db.contactlist.insert({'last-name':'cherif','first-name':'sami','email':'rym@gmail.com', 'age':'3'})
+
+db.contactlist.findOne({ "_id": ObjectId("6570cd5ad6014523d8a10d16") })
+
+contact> db.contactlist.find({ 'age': { $gt: '18' } })
+contact> db.contactlist.updateOne( { "first_name": "Kefi " }, { $set: { "first_name": "Kefi Anis" } } )
+db.contactlist.deleteMany({ 'age': { $lt: '5' } })
+
